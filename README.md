@@ -11,3 +11,10 @@ Source: "https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-
 
 To prepare this data set I removed any duplicate values and confirmed there was no missing data and fixed any inconsistencies within the categorical and numerical features. This included replacing a value with a more manageable value when coding and removing a few inconsistent outliers. 
 
+## Pre-processing
+
+I created a function for the classification report, confusion matrix, and ROC AUC. I then used one hot encoder and scaler to prepare the data for modeling.
+
+## Modeling 
+
+I first ran a base model for Logistic Regression and found it had an accuracy of about 90% on the testing and training data. 
