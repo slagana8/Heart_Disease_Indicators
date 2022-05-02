@@ -27,15 +27,21 @@ I first ran a base model for Logistic Regression and found it had an accuracy of
 
 I then ran a grid search to iterate through the best hyperparameters for my model. Accuracy and ROC AUC stayed the same but it got worse at predicting positive class. 
 
+I decided to oversample the positive class because the data was extremely unbalanced. After doing this it decreased the models ability to predict the negative class but greately improved its ability to predict the postive class from 9% to 79%
+
+I then undersampled the negative class to see if this would have a greater improvement than oversampling but oversampling proved to be a stronger model. 
+
 I used silhouette score and inertia to determine the best amount of clusters for this data set was two and applied it to my model but found it did not make any improvements. 
 
 Since my classes are very unbalanced I decided to use SMOTE to create more of the positive class since the data consists of mostly people who don't have heart disease. After doing this, accuracy went down to 75% but it significantly increased the models ability to predict the positive class. 
 
 ## Final Decision
-After running and tuning multiple models I believe the best model for production is the model done with SMOTE and Logistic Regression.
 
-The accuracy went down to about 75% on the testing data but it got significantly better at predicting the postive class and declined in accuracy predicting the negative class. 
+After running and tuning multiple models I believe the best model for production is the model done by oversampling the positive class. 
 
-In this case, I believe it is important to have better accuracy on the positive class because that means more patients who have heart disease are being treated for it properly. 
+Even though the accuracy score goes down and its ability to predict the negative class weakens it gets a significant amount better at predicting the positive class from predicting 9% of true positives to predicting 79% of true positives. 
 
-![SMOTE](https://user-images.githubusercontent.com/99693002/166169037-832bd3a6-2e68-47a9-b497-c8adde21d5b2.png)
+I believe this is the best model because in this case we are trying to predict if the patients have heart disease and better predicting true positives will lead to patients getting the treatment they need
+
+![Oversampling](https://user-images.githubusercontent.com/99693002/166312917-604b374d-cad0-4faa-a63b-796a869636e0.png)
+
